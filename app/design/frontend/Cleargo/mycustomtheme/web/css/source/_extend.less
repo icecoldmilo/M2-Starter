@@ -1,0 +1,144 @@
+@import '_customfonts.less'; // Custom fonts
+@import '_dropkick.less'; // Dropkick Styling
+
+/* Presets start */
+
+/* Presets end */
+
+& when (@media-common = true) {
+
+	@page__background-image: url('@{baseDir}images/white-bg-marble.png');
+	@page__header-image: url('@{baseDir}images/header-bg-blue.png');
+	body {
+		.lib-css(background-image, @page__background-image);
+		.lib-css(background-repeat,repeat);
+		.lib-css(background-position, center);
+	}
+
+	.page-header {
+		background: @color-white;
+		.panel.wrapper {
+			.lib-css(background-image, @page__header-image);
+			.lib-css(background-size, cover);
+			.lib-css(background-position, center); 
+		}
+	}
+
+	/* Estee style Icons */
+	.minicart-wrapper .action.showcart:before,
+	.minicart-wrapper .action.showcart.active:before {
+		font-family: 'Material-Design-Iconic-Font';
+		content: '\f1cb';
+		line-height: 38px;
+		font-size: 24px;
+	}
+
+	/* Site wide typography */
+	h1 {
+		text-transform: uppercase;
+	}
+
+	/* Home page */
+	.cms-index-index {
+		.page-title-wrapper {
+			display: none;
+		}
+	}
+
+	/* Form Elements */
+	input[type="text"],
+	input[type="password"],
+	input[type="url"],
+	input[type="tel"],
+	input[type="search"],
+	input[type="number"],
+	input[type="datetime"],
+	input[type="email"] {
+		height: 38px;
+		background: @color-elc-grey1;
+		border-radius: 3px;
+		-webkit-transition: all 0.30s ease-in-out;
+		-moz-transition: all 0.30s ease-in-out;
+		-ms-transition: all 0.30s ease-in-out;
+		-o-transition: all 0.30s ease-in-out;
+		outline: none;
+		padding: 7px;
+		border: 1px solid @color-elc-grey3;
+
+		&:focus {
+			box-shadow: 0 0 3px @color-elc-aqua2;
+			border: 1px solid @color-elc-aqua2;
+		}
+	}
+
+	textarea {
+		background: @color-elc-grey1;
+		border-radius: 3px;
+		-webkit-transition: all 0.30s ease-in-out;
+		-moz-transition: all 0.30s ease-in-out;
+		-ms-transition: all 0.30s ease-in-out;
+		-o-transition: all 0.30s ease-in-out;
+		outline: none;
+		padding: 7px;
+		border: 1px solid @color-elc-grey3;
+
+		&:focus {
+			box-shadow: 0 0 3px @color-elc-aqua2;
+			border: 1px solid @color-elc-aqua2;
+		}
+	}
+
+	.block-search .action.search.disabled,
+	.block-search .action.search[disabled],
+	fieldset[disabled] .block-search .action.search {
+		opacity: inherit!important;
+	}
+
+	.minicart-wrapper .action.showcart .counter.qty {
+		background: @color-white;
+		color: @color-core-blue1;
+		height: 20px;
+		width: 20px;
+		line-height: 20px;
+		margin: 9px 0 0;
+		padding: 0;
+		border-radius: 12px;
+	}
+
+	.minicart-wrapper .action.showcart .counter-number {
+		text-shadow: none;
+	}
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.columns {
+		display: flex;
+	}
+
+	.breadcrumbs {
+		margin-bottom: 40px;
+	}
+
+	.block-search .action.search:before {
+		font-family: 'Material-Design-Iconic-Font';
+		content: '\f1c3';
+		color: @color-core-blue1;
+	}
+
+	.minicart-wrapper {
+		margin-left: 15px;
+	}
+
+	.customer-welcome .action.switch[data-action="customer-menu-toggle"] {
+		&:after {
+			font-family: 'Material-Design-Iconic-Font';
+			content: '\f207';
+			font-size: 28px;
+			line-height: 38px;
+		}
+	}
+}
